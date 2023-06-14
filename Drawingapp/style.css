@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;0,500;1,100;1,400&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'lato', sans-serif;
+}
+ul li img{
+    width: 20px;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #505d69 ;
+}
+header{
+    font-size: 30px;
+    font-weight: 600;
+    position: absolute;
+    top:50px;
+    color:#091112;
+    background: #00b4d8;
+    padding: 10px 50px;
+    border-radius: 10px;
+}
+.container{
+    display: flex;
+    width: 100%;
+    max-width: 1050px;
+    padding: 10px;
+    gap:10px;
+}
+section{
+    background:#f8f9fa ;
+    border-radius: 7px;
+}
+.tools-board{
+    width: 210px;
+    padding: 15px 24px 0;
+}
+.tools-board .row{
+    margin-bottom: 20px;
+}
+.row .options{
+    list-style: none;
+    margin: 10px 0 0 5px;
+}
+.row .options .option{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.option:is(:hover, .active) img{
+  filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
+}
+
+.option :where(span, label){
+   color: #5A6168;
+   padding-left: 10px;
+   cursor: pointer; 
+}
+.option:is(:hover, .active) :where(span, label){
+    color: #00b4d8;
+}
+
+.option #fill-color{
+    height: 14px;
+    width:14px;
+    cursor: pointer;
+}
+#fill-color:checked ~ label {
+    color: #00b4d8;
+}
+.option #size-slider{
+    width: 100%;
+    height:5px;
+    margin-top: 10px;
+}
+.colors .options{
+    display: flex;
+    justify-content: space-between;
+}
+.colors .option{
+    height: 20px;
+    width:25px;
+    border-radius: 25%;
+    margin-top: 3px;
+    position: relative;
+}
+.colors .option:nth-child(4){
+    background-color: red;
+}
+.colors .option:nth-child(2){
+    background-color: black;
+}
+.colors .option:nth-child(3){
+    background-color: green;
+}
+.colors .option:nth-child(5){
+    background-color: blue;
+}
+.colors .option:nth-child(1){
+    background-color: purple;
+}
+.colors .option.selected::before{
+    position: absolute;
+    content: "";
+    top:50%;
+    left:50%;
+    height: 13px;
+    width:16px;
+    background: inherit;
+    border-radius: inherit;
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+}
+.colors .option:first-child.seleted:before{
+    border-color: #505d69;
+}
+.option #color-picker{
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+.buttons button{
+  width:100%;
+  color:#120d0d;  
+  border:none;
+  outline:none;
+  font-size: 14px;
+  padding: 11px 0;
+  margin-bottom: 13px;
+  background: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.buttons .clear-canvas{
+    color:#5A6168;
+    border:1px solid #5A6168;
+    transition: all 0.4s ease;
+}
+.buttons .clear-canvas:hover{
+    color:#fff;
+    background: #5A6168;
+}
+.buttons .save-img{
+    background:#00b4d8;
+    border:1px solid #00b4d8;
+}
+.drawing-board{
+    flex:1;
+}
+.drawing-board canvas{
+    width:100%;
+    height: 100%;
+}

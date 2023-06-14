@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #619b8a ;
+}
+.container, .shadow-drop-2-center{
+    width: 450px;
+    background: #cbf3f0;
+    border-radius: 9px;
+    -webkit-animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+     animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+} 
+.container h2{
+    font-weight: 600;
+    font-size: 21px;
+    padding: 16px 26px;
+    border-bottom: 1px solid #000;
+}
+.wrapper{
+    margin: 15px 26px;
+}
+.input-box input{
+    width: 100%;
+    color:#000;
+    height: 45px;
+    font-size: 15px;
+    letter-spacing: 1.4px;
+    font-weight: 600;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 0 25px 0 16px;
+}
+.input-box span{
+   position: absolute; 
+   right:300px;
+   line-height: 50px;
+   color: #aaa;
+   font-size: 13px;
+}
+.wrapper .pass-indicator{
+   width: 100%; 
+   height: 4px;
+   position: relative;
+   background: #000;
+   margin-top: 6px;
+   border-radius: 25px;
+}
+.pass-indicator::before{
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 50%;
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+.pass-indicator#weak::before{
+   width: 20%;
+   background: #d00000;
+}
+.pass-indicator#medium::before{
+    width: 50%;
+    background: #ffea00;
+ }
+ .pass-indicator#strong::before{
+    width: 100%;
+    background: #38b000;
+ }
+
+.wrapper .pass-length{
+    margin:14px 0 16px;
+}
+.pass-length .details{
+   display: flex; 
+   justify-content: space-between;
+}
+.pass-length input{
+    width:100%;
+    height: 5px;
+}
+.pass-settings .options{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+.pass-settings .options .option{
+   display: flex; 
+   align-items: center;
+   margin-bottom: 1rem;
+   width:calc(100% / 2);
+}
+
+.options .option:first-child{
+   pointer-events: none;
+}
+
+.options .option:first-child input{
+    opacity: 0.7;
+ }
+
+
+.options .option input{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.options .option label{
+  cursor: pointer;
+  padding-left: 10px;  
+}
+.wrapper .generate-btn{
+    width: 100%;
+    color:#fff;
+    background: #619b8a;
+    font-size: 18px;
+    border:none;
+    outline: none;
+    font-weight: 600;
+    padding: 13px 0 ;
+    border-radius: 6px;
+    margin: 13px 0 14px ;
+    cursor: pointer;
+    text-transform: uppercase;
+}
